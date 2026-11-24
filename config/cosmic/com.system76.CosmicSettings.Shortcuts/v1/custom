@@ -1,0 +1,116 @@
+{
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "semicolon",
+        description: Some("cosmic-settings"),
+    ): Spawn("cosmic-settings"),
+    (
+        modifiers: [
+            Super,
+        ],
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "y",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "t",
+    ): ToggleTiling,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "g",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Tab",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "f",
+    ): Fullscreen,
+    (
+        modifiers: [
+            Alt,
+        ],
+        key: "m",
+        description: Some("spotify"),
+    ): Spawn("flatpak run com.spotify.Client"),
+    (
+        modifiers: [
+            Alt,
+        ],
+        key: "e",
+    ): System(HomeFolder),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Return",
+        description: Some("term"),
+    ): Spawn("cosmic-term"),
+    (
+        modifiers: [
+            Alt,
+        ],
+        key: "b",
+    ): System(WebBrowser),
+    (
+        modifiers: [
+            Alt,
+        ],
+        key: "s",
+        description: Some("steam"),
+    ): Spawn("steam"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "f",
+    ): ToggleWindowFloating,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "b",
+    ): Disable,
+    (
+        modifiers: [
+            Alt,
+        ],
+        key: "space",
+    ): System(Launcher),
+    (
+        modifiers: [
+            Alt,
+        ],
+        key: "k",
+        description: Some("keepassxc"),
+    ): Spawn("keepassxc"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "period",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "comma",
+        description: Some("cosmic-settings"),
+    ): Spawn("cosmic-settings"),
+}

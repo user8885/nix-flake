@@ -1,0 +1,180 @@
+* { all: unset; }
+
+@define-color bg      rgba(40, 42, 54, 1);
+@define-color bg-alt  rgb(40, 42, 54);
+@define-color current rgb(98, 114, 164);
+@define-color hover   rgb(68, 71, 90);
+@define-color fg      rgb(248, 248, 242);
+@define-color com     rgb(98, 114, 164);
+
+@define-color c1      rgb(255, 85, 85);
+@define-color c2      rgb(255, 184, 108);
+@define-color c3      rgb(241, 250, 140);
+@define-color c4      rgb(80, 250, 123);
+@define-color c5      rgb(139, 233, 253);
+@define-color c6      rgb(189, 147, 249);
+@define-color c7      rgb(255, 121, 198);
+
+* {
+    font-family:   "NotoSans Nerd Font";
+    font-size:     15px;
+    box-shadow:    none;
+    text-shadow:   none;
+    transition-duration: 0s;
+
+    margin: 1 0;
+    padding: 0 3px;
+}
+
+window#waybar {
+    background: @bg;
+    
+    /* 
+    border-bottom: 1px solid @c6; 
+     */
+}
+
+tooltip {
+    background: @bg-alt;
+    border: 1px solid @c6;
+    border-radius: 8px;
+}
+
+#window {
+    color: @c6;
+    padding: 3px 12px;
+}
+
+#workspaces {
+    padding: 3px 12px;
+    background: @bg;
+}
+
+#workspaces button {
+    padding: 0 3px;
+    color: @fg;
+}
+
+#workspaces button.focused, button.active {
+    background: @hover;
+    border-bottom: 2px solid @c7;
+    border-radius: 2px;
+}
+
+#workspaces button:hover {
+    background: @hover;
+}
+
+#workspaces button.urgent {
+    border-bottom: 2px solid @c1;
+}
+
+/*
+#mode, #battery, #cpu, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight { 
+margin:     0px 0px 0px 0px;
+min-width:  25px;
+}
+ */
+
+#network {
+    color: @c4;
+}
+
+#clock {
+    color: @c6;
+}
+
+#idle_inhibitor {
+    color: @c1;
+}
+
+#pulseaudio {
+    color: @c4;
+}
+
+#cpu {
+    color: @c1;
+}
+
+#memory {
+    color: @c5;
+}
+
+#disk{
+    color: @c6;
+    border: 1px solid @c6;
+    border-radius: 10px;
+}
+
+#temperature {
+    color: @c1;
+    border: 1px solid @c1;
+    border-radius: 10px;
+}
+
+#custom-logout {
+    color: @c1;
+    border: 1px solid @c1;
+    border-radius: 10px;
+}
+
+#custom-kernel {
+    color: @c1;
+}
+
+
+#custom-kill_window {
+    color: @c1;
+}
+
+#custom-rofi, #custom-icon {
+    color: @c5;
+    font-size: 20px;
+    padding-right: 3px;
+}
+
+#custom-hyprversion, #custom-swayversion {
+    color: @c5;
+}
+
+#custom-seperator {
+    color: @com;
+    padding: 0 3px;
+}
+
+#custom-updates {
+    color: @c7;
+    border: 1px solid @c7;
+    border-radius: 10px;
+}
+
+#tray {
+    background-color: @bg;
+    padding: 0 5px;
+}
+
+#tray menu {
+    background: @bg-alt;
+    color: @fg;
+}
+
+#tray menu menuitem:hover {
+    background: @c6;
+    color: @fg;
+}
+
+#custom-swaync {
+    color: @c3;
+}
+
+#custom-spotify {
+    color: @c4;
+}
+
+#custom-wttr {
+    color: @c2;
+}
+
+#custom-music {
+    color: @c1;
+}

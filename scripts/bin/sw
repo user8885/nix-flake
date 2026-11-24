@@ -1,0 +1,24 @@
+#!/usr/bin/env fish
+
+if test -f "$argv"
+    rm -f ~/.config/wallpaper
+
+    ln -rs "$argv" ~/.config/wallpaper
+
+    if pgrep -f Xwayland
+        pkill swaybg
+        swaybg -i ~/.config/wallpaper & disown
+    end
+
+    if pgrep -f Xorg 
+        if not pgrep -f Xwayland 
+            feh --no-fehbg --bg-fill ~/.config/wallpaper & disown
+        end
+    end
+else 
+    echo \"$argv\" " - is an invalid arg."
+    echo "Please use a file path :|"
+    echo "Example: /home/\$USER/wallpapers/anime-girl.png"
+end
+
+exit

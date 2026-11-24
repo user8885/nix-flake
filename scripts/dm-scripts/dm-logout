@@ -1,0 +1,33 @@
+#!/usr/bin/env fish
+
+if test -f ~/.config/dm-scripts/config.fish
+    source ~/.config/dm-scripts/config.fish
+else
+    set _dmenu "dmenu"
+    set _dmlock "slock"
+end
+
+set _choice (printf "logout\nlock screen\nsuspend\nreboot\nreboot into uefi\nshut down" | \
+    awk '{print NR": "$0}' | \
+    $_dmenu -i -l 10 -p "dm-logout" | \
+    awk -F: '{print $1}') || exit 1
+
+
+switch $_choice 
+    case "1"
+        loginctl terminate-user $USER
+    case "2"
+        $_dmlock
+    case "3" 
+        $_dmlock & systemctl suspend
+    case"4" 
+        systemctl reboot
+    case "5" 
+        systemctl reboot --firmware-setup
+    case "6"
+        systemctl poweroff
+end
+
+
+disown
+exit 0

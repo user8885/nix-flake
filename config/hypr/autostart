@@ -1,0 +1,25 @@
+#!/usr/bin/env fish
+
+xwaylandvideobridge --qwindowtitle xwlvb &
+/usr/libexec/xdg-desktop-portal-hyprland &
+/usr/libexec/polkit-mate-authentication-agent-1 &
+
+waybar &
+
+swaybg -i ~/.config/wallpaper &
+swaync &
+swayosd-server &
+swayidle-wrapper &
+wlsunset-wrapper &
+
+sleep 2
+
+/opt/Mullvad\ VPN/mullvad-vpn &
+keepassxc &
+nm-applet &
+blueman-applet &
+steam -silent &
+qbittorrent &
+
+disown (jobs -p)
+exit
