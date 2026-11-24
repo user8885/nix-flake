@@ -2,10 +2,10 @@
 
 {
     xdg.configFile = { 
+        "keepassxc".source = ../config/keepassxc;
         "fish".source = ../config/fish;
         "cosmic".source = ../config/cosmic;
         "niri".source = ../config/niri;
-        #"git".source = ../config/git;
         "hypr".source = ../config/hypr;
         "waybar".source = ../config/waybar;
         "swaync".source = ../config/swaync;

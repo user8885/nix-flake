@@ -19,6 +19,16 @@
     settings.user.name = "User8885";
     settings.user.email = "takodajhorton@protonmail.com";
   };
+
+  programs.kitty = {
+      enable = true;
+      shellIntegration.enableFishIntegration = true;
+      font = {
+          name = "JetBrainsMono Nerd Font";
+          size = 12;
+      };
+
+  };
   
   #programs.bash = {
   #  enable = true;
