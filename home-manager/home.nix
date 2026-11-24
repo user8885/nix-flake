@@ -14,11 +14,11 @@
 
   programs.home-manager.enable = true;
 
-  programs.git = {
-    enable = true;
-    settings.user.name = "user8885";
-    settings.user.email = "takodajhorton@protonmail.com";
-  };
+  # programs.git = {
+  #   enable = true;
+  #   settings.user.name = "user8885";
+  #   settings.user.email = "takodajhorton@protonmail.com";
+  # };
   
   #programs.bash = {
   #  enable = true;
