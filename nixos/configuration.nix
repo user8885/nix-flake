@@ -15,6 +15,11 @@
     ./modules/gnome.nix
   ];
 
+  programs.xwayland.enable = true;
+
+  programs.fish.enable = true;
+  programs.dconf.enable = true;
+
   # Bootloader. MUST BE UEFI
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -25,7 +30,7 @@
   environment.variables = {
   };
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "pc"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -57,13 +62,13 @@
   users.users.user = {
     isNormalUser = true;
     description = "user";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel"];
     packages = with pkgs; [
     #  thunderbird
     ];
   };
 
-  security.pam.services.hyprlock = {};
+  # security.pam.services.hyprlock = {};
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -78,10 +83,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim 
+    neovim 
     home-manager
     lutris
-    killall
+    nh
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -1,0 +1,17 @@
+{ pkgs, lib, ...}:
+{
+  programs.kitty = {
+      enable = true;
+      shellIntegration.enableFishIntegration = true;
+      font = {
+          name = "JetBrainsMono Nerd Font";
+          size = 12;
+      };
+
+      settings = {
+          theme = "dracula";
+          include = "Catppuccin-Mocha.conf";
+      };
+
+  };
+}

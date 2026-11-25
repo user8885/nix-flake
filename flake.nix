@@ -1,28 +1,37 @@
 {
-  description = "My nixos config";
+    inputs = {
+        nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
+        nixpkgs_unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
+        areofyl-fetch.url = "github:areofyl/fetch";
+            
+        home-manager = {
+            url = "github:nix-community/home-manager/release-26.05";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
 
-    home-manager = {
-      url = "github:nix-community/home-manager/release-26.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
-
-  outputs = { nixpkgs, home-manager, ... }: 
-  let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-  in {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      inherit system;
-      modules = [ ./nixos/configuration.nix ];
     };
 
-    homeConfigurations.user = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      modules = [ ./home-manager/home.nix ];
+    outputs = { self, nixpkgs, home-manager, ... } @ inputs: 
+    let
+        system = "x86_64-linux";
+        pkgs = nixpkgs.legacyPackages.${system};
+        pkgs_unstable = inputs.nixpkgs_unstable.legacyPackages.${system};
+    in {
+        nixosConfigurations.pc = nixpkgs.lib.nixosSystem {
+            inherit system;
+            modules = [ ./nixos/configuration.nix ];
+            specialArgs = {
+                inherit pkgs_unstable;
+            };
+        };
+
+        homeConfigurations.user = home-manager.lib.homeManagerConfiguration {
+            inherit pkgs;
+            modules = [ ./home-manager/home.nix ];
+            extraSpecialArgs = {
+                inherit inputs pkgs_unstable; # Pass unstable packages to modules
+            };
+        };
     };
-  };
 }

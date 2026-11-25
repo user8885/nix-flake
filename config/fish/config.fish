@@ -1,22 +1,3 @@
-set -gax PATH ~/.local/bin
-set -gax PATH ~/Projects/scripts/dm-scripts
-set -gax PATH /home/linuxbrew/.linuxbrew/bin
-
-set -gx XDG_DATA_HOME $HOME/.local/share/
-set -gx XDG_STATE_HOME $HOME/.local/state/
-set -gx XDG_CONFIG_HOME $HOME/.config/
-set -gx XDG_CACHE_HOME $HOME/.cache
-
-set -gax XDG_DATA_DIRS /var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share # Just for flatpak
-
-set -gx _JAVA_OPTIONS -Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
-set -gx GTK2_RC_FILES $XDG_CONFIG_HOME/gtk-2.0/gtkrc
-set -gx GNUPGHOME $XDG_DATA_HOME/gnupg
-
-# set -gx QT_QPA_PLATFORMTHEME qt6ct
-
-set -gx MY_TERM kitty
-set -gx EDITOR nvim
 
 if status is-interactive
 
@@ -43,9 +24,9 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
     set -g fish_key_bindings fish_vi_key_bindings
 
-    if test -d (brew --prefix)/share/fish/completions
-        set -p fish_complete_path (brew --prefix)/share/fish/completions
-    end
+    #    if test -d (brew --prefix)/share/fish/completions
+    #        set -p fish_complete_path (brew --prefix)/share/fish/completions
+    #    end
 
     alias xway="env -u WAYLAND_DISPLAY"
 

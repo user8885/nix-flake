@@ -1,32 +1,36 @@
 { config, ... }:
 
-{
-    xdg.configFile = { 
-        "keepassxc".source = ../config/keepassxc;
-        "fish".source = ../config/fish;
-        "cosmic".source = ../config/cosmic;
-        "niri".source = ../config/niri;
-        "hypr".source = ../config/hypr;
-        "waybar".source = ../config/waybar;
-        "swaync".source = ../config/swaync;
-        "yazi".source = ../config/yazi;
-        "rofi".source = ../config/rofi;
-        "fastfetch".source = ../config/fastfetch;
-        "nvim".source = ../config/nvim;
-        ".config/btop".source = ../config/btop;
-        ".config/bspwm".source = ../config/bspwm;
-        ".config/awesome".source = ../config/awesome;
-        ".config/dm-scripts".source = ../config/dm-scripts;
-        ".config/picom".source = ../config/picom;
-        ".config/polybar".source = ../config/polybar;
-        ".config/qtile".source = ../config/qtile;
-        ".config/sway".source = ../config/sway;
-        ".config/sxhkd".source = ../config/sxhkd;
-    };
+let
+flakeDir = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-flake";
+configDir = "${flakeDir}/config/";
+in {
+        xdg.configFile = { 
+            "hypr".source = "${flakeDir}/config/hypr";
+            "fish".source = "${flakeDir}/config/fish";
+            "kitty/Catppuccin-Mocha.conf".source = "${flakeDir}/config/kitty/Catppuccin-Mocha.conf";
+            "cosmic".source = "${flakeDir}/config/cosmic";
+            "niri".source = "${flakeDir}/config/niri";
+            "waybar".source = "${flakeDir}/config/waybar";
+            "swaync".source = "${flakeDir}/config/swaync";
+            "yazi".source = "${flakeDir}/config/yazi";
+            "rofi".source = "${flakeDir}/config/rofi";
+            "fastfetch".source = "${flakeDir}/config/fastfetch";
+            "nvim".source = "${flakeDir}/config/nvim";
+            "btop".source = "${flakeDir}/config/btop";
+            "bspwm".source = "${flakeDir}/config/bspwm";
+            "awesome".source = "${flakeDir}/config/awesome";
+            "dm-scripts".source = "${flakeDir}/config/dm-scripts";
+            #picom".source = "${flakeDir}onfig/picom";
+            "polybar".source = "${flakeDir}/config/polybar";
+            "qtile".source = "${flakeDir}/config/qtile";
+            "sway".source = "${flakeDir}/config/sway";
+            "sxhkd".source = "${flakeDir}/config/sxhkd";
+        };
 
 
     home.file = {
-        ".local/bin".source = ../scripts/bin;
+        ".local/bin".source = "${flakeDir}/scripts/bin";
+
     };
 
 }

@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  fonts.fontconfig = {
+  config.fonts.fontconfig = {
     enable = true;
     defaultFonts = {
       serif     = [ "Ubuntu" ];
@@ -10,7 +10,8 @@
     };
   };
 
-  gtk = {
+
+  config.gtk = {
     enable = true;
 
     font = {
@@ -34,9 +35,9 @@
     };
   };
 
-  home.file.".icons/default".source = "${pkgs.vanilla-dmz}/share/icons/DMZ-Black";
+  config.home.file.".icons/default".source = "${pkgs.vanilla-dmz}/share/icons/DMZ-Black";
 
-  home.file = {
+  config.home.file = {
     # gets kvantum theme from the gtk theme package
     ".config/Kvantum/kvantum.kvconfig".text = ''
       [General]
@@ -80,7 +81,7 @@
     '';
   };
 
-  qt = {
+  config.qt = {
     enable = true;
     platformTheme.name = "qt6ct";
     style.name = "kvantum";

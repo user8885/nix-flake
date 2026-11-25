@@ -1,7 +1,7 @@
-{ config, pkgs, ... };
+{ config, pkgs, ... }:
 {
     home.packages = with pkgs; [
-        rofi-wayland
+        rofi
         waybar
         networkmanagerapplet
         swaynotificationcenter

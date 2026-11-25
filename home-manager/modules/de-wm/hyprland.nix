@@ -2,8 +2,8 @@
 
 {
     imports = [
-        ./wayland-wm-pkgs.nix
-        ./wm-gtk-theme.nix
+        ../wayland-wm-pkgs.nix
+        ../themes/dracula.nix
     ];
 
     home.packages = with pkgs; [
