@@ -9,6 +9,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./services.nix
+    ./modules/flatpak.nix
   ];
   disabledModules = [
     ./modules/greetd.nix
@@ -16,6 +17,9 @@
   ];
 
   programs.xwayland.enable = true;
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.config.common.default = "*";
 
   programs.fish.enable = true;
   programs.dconf.enable = true;
@@ -129,5 +133,21 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment? NO LOL.
+
+  system.autoUpgrade = {
+      enable = true;
+      flake = "/home/user/nix-flake/"; # e.g., inputs.self.outPath
+          flags = [
+          "--commit-lock-file" # Automatically commits changes
+          ];
+      dates = "weekly"; # Schedule time
+  };
+
+  nix.gc = {
+      automatic = true;
+      dates = "weekly"; # Runs every week at 03:15 by default
+      options = "--delete-older-than 15d"; # Keeps generations older than 30 days
+      persistent = true; # Runs missed collections after system sleep/shutdown
+  };
 
 }

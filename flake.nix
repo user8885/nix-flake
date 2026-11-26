@@ -2,6 +2,7 @@
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
         nixpkgs_unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+        nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
         areofyl-fetch.url = "github:areofyl/fetch";
             
@@ -20,9 +21,12 @@
     in {
         nixosConfigurations.pc = nixpkgs.lib.nixosSystem {
             inherit system;
-            modules = [ ./nixos/configuration.nix ];
+            modules = [ 
+            ./nixos/configuration.nix 
+            inputs.nix-flatpak.nixosModules.nix-flatpak
+            ];
             specialArgs = {
-                inherit pkgs_unstable;
+                inherit inputs pkgs_unstable;
             };
         };
 

@@ -77,4 +77,12 @@
             nerd-fonts.jetbrains-mono
             ];
     };
+
+    services.home-manager.autoUpgrade = {
+        enable = true;
+        useFlake = true;
+        flakeDir = "/home/user/nix-flake/";
+        frequency = "weekly";
+        preSwitchCommands = [ "nix flake update" ];
+    };
 }

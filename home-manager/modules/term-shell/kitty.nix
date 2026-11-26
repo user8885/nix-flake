@@ -11,6 +11,7 @@
       settings = {
           theme = "dracula";
           include = "Catppuccin-Mocha.conf";
+          remember_window_size = "no";
       };
 
   };

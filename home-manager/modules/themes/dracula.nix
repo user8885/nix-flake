@@ -1,28 +1,28 @@
 { config, pkgs, ... }:
 
 {
+ # keeps old behaviour ? i cant spell 
+  config.gtk.gtk4.theme = config.gtk.theme;
+
   config.fonts.fontconfig = {
     enable = true;
     defaultFonts = {
-      serif     = [ "Ubuntu" ];
-      sansSerif = [ "Ubuntu" ];
+      serif     = [ "JetBrainsMono Nerd Font" ];
+      sansSerif = [ "JetBrainsMono Nerd Font" ];
       monospace = [ "JetBrainsMono Nerd Font" ];
     };
   };
 
+  config.home.sessionVariables.GTK_THEME = "Dracula";
 
   config.gtk = {
     enable = true;
-
-    font = {
-      name = "Ubuntu";
-      size = 11;
-    };
 
     theme = {
       name = "Dracula";
       package = pkgs.dracula-theme;
     };
+
 
     iconTheme = {
       name = "Dracula";
@@ -33,6 +33,10 @@
       name = "DMZ";
       package = pkgs.vanilla-dmz;
     };
+
+    gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
+    gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
+
   };
 
   config.home.file.".icons/default".source = "${pkgs.vanilla-dmz}/share/icons/DMZ-Black";
