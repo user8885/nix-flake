@@ -1,8 +1,8 @@
 #!/usr/bin/env fish
 
-xwaylandvideobridge --qwindowtitle xwlvb &
-/usr/libexec/xdg-desktop-portal-hyprland &
-/usr/libexec/polkit-mate-authentication-agent-1 &
+#xwaylandvideobridge --qwindowtitle xwlvb &
+#/usr/libexec/xdg-desktop-portal-hyprland &
+#/usr/libexec/polkit-mate-authentication-agent-1 &
 
 waybar &
 
@@ -14,7 +14,7 @@ wlsunset-wrapper &
 
 sleep 2
 
-/opt/Mullvad\ VPN/mullvad-vpn &
+mullvad-vpn &
 keepassxc &
 nm-applet &
 blueman-applet &

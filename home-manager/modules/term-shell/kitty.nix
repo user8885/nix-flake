@@ -12,6 +12,8 @@
           theme = "dracula";
           include = "Catppuccin-Mocha.conf";
           remember_window_size = "no";
+          confirm_os_window_close = "0";
+
       };
 
   };

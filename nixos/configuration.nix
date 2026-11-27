@@ -6,7 +6,6 @@
 
 {
   imports = [ 
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./services.nix
     ./modules/flatpak.nix
@@ -91,6 +90,8 @@
     home-manager
     lutris
     nh
+    mullvad
+    mullvad-vpn
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -141,13 +142,6 @@
           "--commit-lock-file" # Automatically commits changes
           ];
       dates = "weekly"; # Schedule time
-  };
-
-  nix.gc = {
-      automatic = true;
-      dates = "weekly"; # Runs every week at 03:15 by default
-      options = "--delete-older-than 15d"; # Keeps generations older than 30 days
-      persistent = true; # Runs missed collections after system sleep/shutdown
   };
 
 }

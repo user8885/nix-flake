@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }: 
+{ config, pkgs, lib, inputs, ... }: 
 
 {
 
@@ -40,7 +40,7 @@
       MY_TERM = "kitty";
       PATH = "$HOME/.local/bin:$HOME/nix-flake/scripts/dm-scripts:$PATH";
 
-      XDG_DATA_DIRS = "/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share:$HOME/.nix-profile/share";
+      XDG_DATA_DIRS = "/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share:/run/current-system/sw/share:$HOME/.nix-profile/share";
       XDG_DATA_HOME = "$HOME/.local/share/";
       XDG_STATE_HOME = "$HOME/.local/state/";
       XDG_CONFIG_HOME = "$HOME/.config/";
@@ -54,28 +54,29 @@
 
     packages = with pkgs; [
         brave
-            mpv
-            spotify
-            keepassxc
-            qbittorrent
+        firefox
+        mpv
+        spotify
+        keepassxc
+        qbittorrent
+        thunar
 
-            pulsemixer
-            btop
-            yazi
-            neovim
-            zoxide
-            fastfetch
-            eza
-            starship
-            dwt1-shell-color-scripts
-            wl-clipboard
-            xclip
-            wget
-            git
-            unzip
+        pulsemixer
+        btop
+        neovim
+        zoxide
+        fastfetch
+        eza
+        starship
+        dwt1-shell-color-scripts
+        wl-clipboard
+        xclip
+        wget
+        git
+        unzip
 
-            nerd-fonts.jetbrains-mono
-            ];
+        nerd-fonts.jetbrains-mono
+        ];
     };
 
     services.home-manager.autoUpgrade = {
@@ -85,4 +86,12 @@
         frequency = "weekly";
         preSwitchCommands = [ "nix flake update" ];
     };
+
+  nix.gc = {
+      automatic = true;
+      dates = "weekly"; # Runs every week at 03:15 by default
+      options = "--delete-older-than 10d"; # Keeps generations older than 30 days
+      persistent = true; # Runs missed collections after system sleep/shutdown
+  };
+
 }

@@ -2,14 +2,11 @@
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
         nixpkgs_unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-        nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
+        nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
         areofyl-fetch.url = "github:areofyl/fetch";
             
-        home-manager = {
-            url = "github:nix-community/home-manager/release-26.05";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
+        home-manager.url = "github:nix-community/home-manager/release-26.05";
 
     };
 
@@ -34,8 +31,9 @@
             inherit pkgs;
             modules = [ ./home-manager/home.nix ];
             extraSpecialArgs = {
-                inherit inputs pkgs_unstable; # Pass unstable packages to modules
+                inherit inputs pkgs_unstable;
             };
         };
+
     };
 }

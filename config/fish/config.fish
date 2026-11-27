@@ -1,9 +1,9 @@
 
 if status is-interactive
 
-    if test -e (whereis starship | awk '{ print $2 }')
-        starship init fish | source
-    end
+    #if test -e (whereis starship | awk '{ print $2 }')
+    #    starship init fish | source
+    #end
 
     function fish_greeting
         if test -e (whereis colorscript | awk '{ print $2 }')

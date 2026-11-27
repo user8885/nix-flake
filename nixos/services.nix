@@ -1,10 +1,13 @@
 { config, pkgs, ... }:
 
 {
-# programs.virt-manager.enable = true;
-# users.groups.libvirtd.members = ["user"];
-# virtualisation.libvirtd.enable = true;
-# virtualisation.spiceUSBRedirection.enable = true;
+
+  services.mullvad-vpn.enable = true;
+
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = ["user"];
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
 
 # services.searx = {
 #   enable = true;
