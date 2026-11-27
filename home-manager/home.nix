@@ -67,7 +67,6 @@
         zoxide
         fastfetch
         eza
-        starship
         dwt1-shell-color-scripts
         wl-clipboard
         xclip
@@ -87,11 +86,11 @@
         preSwitchCommands = [ "nix flake update" ];
     };
 
-  nix.gc = {
-      automatic = true;
-      dates = "weekly"; # Runs every week at 03:15 by default
-      options = "--delete-older-than 10d"; # Keeps generations older than 30 days
-      persistent = true; # Runs missed collections after system sleep/shutdown
-  };
+    nix.gc = {
+        automatic = true;
+        dates = "weekly"; # Runs every week at 03:15 by default
+            options = "--delete-older-than 10d"; # Keeps generations older than 30 days
+            persistent = true; # Runs missed collections after system sleep/shutdown
+    };
 
 }

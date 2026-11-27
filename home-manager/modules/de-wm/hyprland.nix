@@ -3,7 +3,7 @@
 {
     imports = [
         ../wayland-wm-pkgs.nix
-        ../themes/dracula.nix
+        ../themes/init.nix
     ];
 
     home.packages = with pkgs; [

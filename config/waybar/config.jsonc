@@ -8,18 +8,14 @@
 
     // Choose the order of the modules
     "modules-left": [
-        "custom/hyprversion",
-        "custom/seperator",
         "hyprland/workspaces",
         "custom/seperator",
-        "hyprland/window"
-    ],
-    "modules-center": [
         "tray"
     ],
+    "modules-center": [
+        "hyprland/window"
+    ],
     "modules-right": [
-        "custom/wttr",
-        "custom/seperator",
         "custom/music",
         "custom/seperator",
         "pulseaudio",
