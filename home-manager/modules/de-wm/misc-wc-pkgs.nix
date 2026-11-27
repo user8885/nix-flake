@@ -8,7 +8,6 @@
         swayosd
         swaylock
         swaybg
-        swayidle
         wlsunset
         grim
         slurp

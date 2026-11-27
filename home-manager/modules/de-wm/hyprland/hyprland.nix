@@ -2,7 +2,6 @@
 
 {
     imports = [
-        ../wayland-wm-pkgs.nix
         ../themes/init.nix
     ];
 
