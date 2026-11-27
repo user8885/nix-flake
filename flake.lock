@@ -5,11 +5,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1795633082,
-        "narHash": "sha256-3hnr144/D4/W+ujwsVS7NSJuZMYX+5UNGATl7AaY4NQ=",
+        "lastModified": 1795722906,
+        "narHash": "sha256-nXp3Qw0TOPdMQ2DY8Evonb/MHqsYBH+kIyZTS5xS+L4=",
         "owner": "areofyl",
         "repo": "fetch",
-        "rev": "6183b989082f732776de0d88b57d7df7ae1a1408",
+        "rev": "ce8b8dcdc62cfe552d0b810887504995daffe870",
         "type": "github"
       },
       "original": {
@@ -18,9 +18,27 @@
         "type": "github"
       }
     },
-    "home-manager": {
+    "catppuccin-mocha-flamingo-theme": {
       "inputs": {
         "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1795786606,
+        "narHash": "sha256-ZlD0S0mOOHtdHN2WEhgzYyMVmvkUIoOQHYXe0psN8wo=",
+        "owner": "user8885",
+        "repo": "catppuccin-mocha-flamingo-theme",
+        "rev": "01a9f57f6a99604c49fbdf875ae9cc7c5b059a90",
+        "type": "github"
+      },
+      "original": {
+        "owner": "user8885",
+        "repo": "catppuccin-mocha-flamingo-theme",
+        "type": "github"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
       },
       "locked": {
         "lastModified": 1795325060,
@@ -71,6 +89,22 @@
     },
     "nixpkgs_2": {
       "locked": {
+        "lastModified": 1795234589,
+        "narHash": "sha256-f/VVvxf5RsQgWVhUtefoca5ktVg0DA2bnkMOcmSnozo=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "2786a2a72088ecf32aea5b3ec52099e6a7cff78f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
         "lastModified": 1794872590,
         "narHash": "sha256-E+XLAfnC7+bdr4qlEgRv6cdGmiqTU5oeFNKCha7epqQ=",
         "owner": "NixOS",
@@ -85,7 +119,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_3": {
+    "nixpkgs_4": {
       "locked": {
         "lastModified": 1795370043,
         "narHash": "sha256-s/0jq8usZtLVOolYBwmyUmd3JsfAu7w3FU+a0dgMqSY=",
@@ -120,9 +154,10 @@
     "root": {
       "inputs": {
         "areofyl-fetch": "areofyl-fetch",
+        "catppuccin-mocha-flamingo-theme": "catppuccin-mocha-flamingo-theme",
         "home-manager": "home-manager",
         "nix-flatpak": "nix-flatpak",
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": "nixpkgs_4",
         "nixpkgs_unstable": "nixpkgs_unstable"
       }
     }

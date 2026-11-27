@@ -8,11 +8,11 @@
         swayosd
         swaylock
         swaybg
+        swayidle
         wlsunset
         grim
         slurp
         imv
-        nwg-look
         kdePackages.qt6ct
         libsForQt5.qtstyleplugin-kvantum
     ];

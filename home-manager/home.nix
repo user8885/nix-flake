@@ -4,11 +4,12 @@
 
   imports = [
     ./modules/term-shell/init.nix
-    ./modules/fetch.nix
     ./modules/de-wm/hyprland.nix
+    ./modules/fetch.nix
     ./xdg-config.nix
   ];
   disabledModules = [
+    ./modules/flatpak.nix
     ./modules/de-wm/gnome.nix
   ];
 
@@ -40,11 +41,11 @@
       MY_TERM = "kitty";
       PATH = "$HOME/.local/bin:$HOME/nix-flake/scripts/dm-scripts:$PATH";
 
-      XDG_DATA_DIRS = "/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share:/run/current-system/sw/share:$HOME/.nix-profile/share";
-      XDG_DATA_HOME = "$HOME/.local/share/";
-      XDG_STATE_HOME = "$HOME/.local/state/";
-      XDG_CONFIG_HOME = "$HOME/.config/";
-      XDG_CACHE_HOME = "$HOME/.cache";
+      XDG_DATA_DIRS = lib.mkForce "/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share:/run/current-system/sw/share:$HOME/.nix-profile/share";
+      XDG_DATA_HOME = lib.mkForce "/home/user/.local/share/";
+      XDG_STATE_HOME = lib.mkForce "/home/user/.local/state/";
+      XDG_CONFIG_HOME = lib.mkForce "/home/user/.config/";
+      XDG_CACHE_HOME = lib.mkForce "/home/user/.cache/";
 
       _JAVA_OPTIONS = "-Djava.util.prefs.userRoot='$XDG_CONFIG_HOME'/java";
       GNUPGHOME = "$XDG_DATA_HOME/gnupg";
@@ -61,6 +62,7 @@
         qbittorrent
         thunar
 
+        playerctl
         pulsemixer
         btop
         neovim
@@ -75,6 +77,8 @@
         unzip
 
         nerd-fonts.jetbrains-mono
+        nerd-fonts.iosevka
+        iosevka
         ];
     };
 

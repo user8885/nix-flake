@@ -44,6 +44,10 @@
         "rhythmbox": {
             "state": "ignored",
             "app-name": "Rhythmbox"
+        },
+        "Mullvad VPN": {
+            "state": "muted",
+            "app-name": "Mullvad VPN"
         }
     },
     "widgets": [

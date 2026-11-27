@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
  # keeps old behaviour ? i cant spell 
@@ -13,20 +13,24 @@
     };
   };
 
-  config.home.sessionVariables.GTK_THEME = "Dracula";
+  config.home.sessionVariables.GTK_THEME = "catppuccin-mocha-flamingo-standard+default";
 
   config.gtk = {
     enable = true;
 
     theme = {
-      name = "Catppuccin";
-      package = pkgs.catppuccin;
+      name = "catppuccin-mocha-flamingo-standard+default";
+      package = pkgs.catppuccin-mocha-flamingo-theme;
     };
 
+    font = {
+        name = "JetBrainsMono Nerd Font";
+        size = 11;
+    };
 
     iconTheme = {
-      name = "Colloid";
-      package = pkgs.colloid-icon-theme;
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
     };
 
     cursorTheme = {
@@ -44,22 +48,22 @@
   config.home.file = {
     # gets kvantum theme from the gtk theme package
     ".config/Kvantum/kvantum.kvconfig".text = ''
-      [General]
-      theme=Catppuccin-Mocha-Flamingo
+    [General]
+    theme=catppuccin-mocha-flamingo
     '';
 
-    ".config/Kvantum/catppuccin-mocha-flamingo".source = "${pkgs.catppuccin}/share/Kvantum/catppuccin-mocha-flamingo";
+    ".config/Kvantum/catppuccin-mocha-flamingo".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-flake/config/Kvantum/catppuccin-mocha-flamingo";
 
     ".config/qt6ct/qt6ct.conf".text = ''
           [Appearance]
           custom_palette=false
-          icon_theme=Dracula
+          icon_theme=Papirus-Dark
           standard_dialogs=default
-          style=kvantum
+          style=kvantum-dark
           
           [Fonts]
-          fixed="Noto Sans,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
-          general="Noto Sans,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
+          fixed="JetBrainsMono Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
+          general="JetBrainsMono Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
           
           [Interface]
           activate_item_on_single_click=1

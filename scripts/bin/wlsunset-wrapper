@@ -6,7 +6,7 @@ if test -n $sun
     pkill wlsunset
 end
 
-wlsunset -T 6500 -t 4600 -S 06:30 -s 20:30 &
+wlsunset -T 6500 -t 4700 -S 08:30 -s 18:30 &
 
 disown
 exit

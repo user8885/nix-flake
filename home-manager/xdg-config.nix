@@ -5,6 +5,7 @@ flakeDir = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix
 configDir = "${flakeDir}/config/";
 in {
         xdg.configFile = { 
+            "Thunar".source = "${flakeDir}/config/Thunar";
             "hypr".source = "${flakeDir}/config/hypr";
             "fish".source = "${flakeDir}/config/fish";
             "kitty/Catppuccin-Mocha.conf".source = "${flakeDir}/config/kitty/Catppuccin-Mocha.conf";
@@ -25,6 +26,9 @@ in {
             "qtile".source = "${flakeDir}/config/qtile";
             "sway".source = "${flakeDir}/config/sway";
             "sxhkd".source = "${flakeDir}/config/sxhkd";
+            "pipewire".source = "${flakeDir}/config/pipewire";
+            "wireplumber".source = "${flakeDir}/config/wireplumber";
+            #"Kvantum".source = "${flakeDir}/config/Kvantum";
         };
 
 

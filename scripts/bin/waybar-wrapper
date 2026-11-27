@@ -1,7 +1,8 @@
-#!/usr/bin/env fish
+#!/usr/bin/env bash
 
 pkill waybar
-waybar &
+waybar -c $HOME/nix-flake/config/waybar/b1.jsonc &
+waybar -c $HOME/nix-flake/config/waybar/b2.jsonc &
 
 disown
 exit

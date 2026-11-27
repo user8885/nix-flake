@@ -1,0 +1,29 @@
+// -*- mode: jsonc -*-
+{
+    "position": "top", 
+    "output": "HDMI-A-1",
+
+    "include": [ "$HOME/.config/waybar/modules.jsonc" ],
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/seperator",
+        "custom/hyprversion"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+
+    "modules-right": [
+        "custom/wttr",
+        "custom/seperator",
+        "cpu",
+        "custom/seperator",
+        "memory",
+        "custom/seperator",
+        "temperature",
+        "custom/seperator",
+        "disk"
+    ]
+}
+

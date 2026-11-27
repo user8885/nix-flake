@@ -5,6 +5,7 @@
 
         nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
         areofyl-fetch.url = "github:areofyl/fetch";
+        catppuccin-mocha-flamingo-theme.url = "github:user8885/catppuccin-mocha-flamingo-theme";
             
         home-manager.url = "github:nix-community/home-manager/release-26.05";
 
@@ -12,10 +13,15 @@
 
     outputs = { self, nixpkgs, home-manager, ... } @ inputs: 
     let
+        catppuccin-overlay = inputs.catppuccin-mocha-flamingo-theme.overlays.default;
+
+        #flatpak = inputs.nix-flatpak.homeManagerModules.nix-flatpak;
+
         system = "x86_64-linux";
-        pkgs = nixpkgs.legacyPackages.${system};
+        pkgs = nixpkgs.legacyPackages.${system}.extend catppuccin-overlay;
         pkgs_unstable = inputs.nixpkgs_unstable.legacyPackages.${system};
-    in {
+    in 
+    {
         nixosConfigurations.pc = nixpkgs.lib.nixosSystem {
             inherit system;
             modules = [ 

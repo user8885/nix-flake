@@ -89,6 +89,7 @@
     neovim 
     home-manager
     lutris
+    gamescope
     nh
     mullvad
     mullvad-vpn

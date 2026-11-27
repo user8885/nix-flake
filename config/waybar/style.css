@@ -1,20 +1,20 @@
 * { all: unset; }
 
-@define-color bg      rgba(30, 30, 46, 0.75);
+@define-color bg          rgba(30, 30, 46, 0.75);
 @define-color bg-alt      rgb(30, 30, 46);
-@define-color current rgb(137, 180, 250);
-@define-color hover   rgb(108, 112, 134);
-@define-color fg      rgb(205, 214, 244);
-@define-color com     rgb(147, 153, 178);
+@define-color current     rgb(137, 180, 250);
+@define-color hover       rgb(108, 112, 134);
+@define-color fg          rgb(205, 214, 244);
+@define-color com         rgb(147, 153, 178);
 
-@define-color c1      rgb(243, 139, 168);
-@define-color c2      rgb(250, 179, 135);
-@define-color c3      rgb(249, 226, 175);
-@define-color c4      rgb(166, 227, 161);
-@define-color c5      rgb(137, 180, 250);
+@define-color c1          rgb(243, 139, 168);
+@define-color c2          rgb(250, 179, 135);
+@define-color c3          rgb(249, 226, 175);
+@define-color c4          rgb(166, 227, 161);
+@define-color c5          rgb(137, 180, 250);
 
-@define-color c6      rgb(242, 205, 205);
-@define-color c7      rgb(180, 190, 254);
+@define-color c6          rgb(242, 205, 205);
+@define-color c7          rgb(180, 190, 254);
 
 * {
     font-family:   "JetBrainsMono Nerd Font";
@@ -101,21 +101,15 @@ min-width:  25px;
 }
 
 #disk{
-    color: @c6;
-    border: 1px solid @c6;
-    border-radius: 10px;
+    color: @c7;
 }
 
 #temperature {
-    color: @c1;
-    border: 1px solid @c1;
-    border-radius: 10px;
+    color: @c4;
 }
 
 #custom-logout {
     color: @c1;
-    border: 1px solid @c1;
-    border-radius: 10px;
 }
 
 #custom-kernel {

@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 
-set _player rhythmbox
-set _player_name "Rhythmbox"
+set _player spotify
+set _player_name "spotify"
 
 set _artist (playerctl -ps $_player metadata | \
     awk ' /artist/ { for (i = 3; i <= NF; i++) print $i } ')

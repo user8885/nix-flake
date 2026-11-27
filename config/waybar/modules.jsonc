@@ -1,33 +1,22 @@
-// -*- mode: jsonc -*-
 {
-    "position": "top", // Waybar position (top|bottom|left|right)
+    "hyprland/workspaces" : {
+        "format": "{name}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "default": "󰝥"
+        },
 
-//    "include": [
-//      "$HOME/.config/waybar/Modules.jsonc"
-//   ],
+        "persistent-workspaces": {
+            "*": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        },
 
-    // Choose the order of the modules
-    "modules-left": [
-        "hyprland/workspaces",
-        "custom/seperator",
-        "tray"
-    ],
-    "modules-center": [
-        "hyprland/window"
-    ],
-    "modules-right": [
-        "custom/music",
-        "custom/seperator",
-        "pulseaudio",
-        "custom/seperator",
-        "clock",
-        "custom/seperator",
-        "custom/swaync"
-    ],
+        "sort-by-id": true
 
-    // "hyprland/workspaces" : {
-    //     "format": "󰇄 {name}"
-    // },
+    },
 
     "hyprland/window" : {
         "tooltip": false,
@@ -200,13 +189,13 @@
     }, 
 
     "custom/music": {
-        "exec": "~/.config/waybar/scripts/custom-music",
+        "exec": "$HOME/nix-flake/config/waybar/scripts/custom-music",
         "interval": 1,
         "return-type": "json",
         "max-length": 40,
-        "on-click": "playerctl -p rhythmbox play-pause",
-        "on-click-right": "playerctl -p rhythmbox next",
-        "on-scroll-up": "playerctl -p rhythmbox volume 0.05+",
-        "on-scroll-down": "playerctl -p rhythmbox volume 0.05-"
+        "on-click": "playerctl -p spotify play-pause",
+        "on-click-right": "playerctl -p spotify next",
+        "on-scroll-up": "playerctl -p spotify volume 0.05+",
+        "on-scroll-down": "playerctl -p spotify volume 0.05-"
     }
 }
