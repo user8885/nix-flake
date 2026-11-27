@@ -35,7 +35,7 @@ if status is-interactive
     alias b="btop"
     alias nv="nvtop"
     alias pm="pulsemixer"
-    alias ac="ani-cli -v"
+    alias ac="ani-cli"
     alias db="distrobox"
     alias v="nvim"
     alias v.="nvim ."

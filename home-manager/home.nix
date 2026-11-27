@@ -4,7 +4,7 @@
 
   imports = [
     ./modules/term-shell/init.nix
-    ./modules/de-wm/hyprland.nix
+    ./modules/de-wm/hyprland/init.nix
     ./modules/fetch.nix
     ./xdg-config.nix
   ];
@@ -54,7 +54,6 @@
     };
 
     packages = with pkgs; [
-        brave
         firefox
         mpv
         spotify
