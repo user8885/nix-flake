@@ -47,12 +47,11 @@
 
   config.home.file = {
     # gets kvantum theme from the gtk theme package
+    # package = pkgs.catppuccin-mocha-flamingo-theme;
     ".config/Kvantum/kvantum.kvconfig".text = ''
     [General]
     theme=catppuccin-mocha-flamingo
     '';
-
-    ".config/Kvantum/catppuccin-mocha-flamingo".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-flake/config/Kvantum/catppuccin-mocha-flamingo";
 
     ".config/qt6ct/qt6ct.conf".text = ''
           [Appearance]
@@ -62,8 +61,8 @@
           style=kvantum-dark
           
           [Fonts]
-          fixed="JetBrainsMono Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
-          general="JetBrainsMono Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
+          fixed="JetBrainsMono Nerd Font,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
+          general="JetBrainsMono Nerd Font,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
           
           [Interface]
           activate_item_on_single_click=1
