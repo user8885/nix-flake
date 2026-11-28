@@ -93,6 +93,7 @@
     nh
     mullvad
     mullvad-vpn
+    btrfs-assistant
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

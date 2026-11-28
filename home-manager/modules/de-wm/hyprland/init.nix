@@ -2,7 +2,10 @@
 {
     imports = [
     ./hyprland.nix
-    ./swayidle.nix
-    ../misc-wc-pkgs.nix
+    ../misc-wc-mods/pkgs.nix
+    ];
+    
+    disabledModules = [
+    ../misc-wc-mods/swayidle.nix
     ];
 }
