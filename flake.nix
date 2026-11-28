@@ -11,15 +11,13 @@
 
     };
 
-    outputs = { self, nixpkgs, home-manager, ... } @ inputs: 
+    outputs = { self, nixpkgs, ... } @ inputs: 
     let
-        catppuccin-overlay = inputs.catppuccin-mocha-flamingo-theme.overlays.default;
-
         #flatpak = inputs.nix-flatpak.homeManagerModules.nix-flatpak;
 
         system = "x86_64-linux";
-        pkgs = nixpkgs.legacyPackages.${system}.extend catppuccin-overlay;
-        pkgs_unstable = inputs.nixpkgs_unstable.legacyPackages.${system};
+        pkgs = nixpkgs.legacyPackages.${system};        pkgs_unstable = inputs.nixpkgs_unstable.legacyPackages.${system};
+        catp_pkg = inputs.catppuccin-mocha-flamingo-theme.packages.${system}.default;
     in 
     {
         nixosConfigurations.pc = nixpkgs.lib.nixosSystem {
@@ -33,11 +31,11 @@
             };
         };
 
-        homeConfigurations.user = home-manager.lib.homeManagerConfiguration {
+        homeConfigurations.user = inputs.home-manager.lib.homeManagerConfiguration {
             inherit pkgs;
             modules = [ ./home-manager/home.nix ];
             extraSpecialArgs = {
-                inherit inputs pkgs_unstable;
+                inherit inputs pkgs_unstable catp_pkg;
             };
         };
 
