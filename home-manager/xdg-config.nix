@@ -28,6 +28,8 @@ in {
             "sxhkd".source = "${flakeDir}/config/sxhkd";
             "pipewire".source = "${flakeDir}/config/pipewire";
             "wireplumber".source = "${flakeDir}/config/wireplumber";
+            "keepassxc".source = "${flakeDir}/config/keepassxc";
+            "qBittorrent".source = "${flakeDir}/config/qBittorrent";
             #"Kvantum".source = "${flakeDir}/config/Kvantum";
         };
 
