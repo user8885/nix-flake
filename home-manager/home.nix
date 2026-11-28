@@ -66,6 +66,7 @@
         btop
         neovim
         zoxide
+        starship
         fastfetch
         eza
         dwt1-shell-color-scripts
